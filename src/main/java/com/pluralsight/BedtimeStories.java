@@ -13,8 +13,12 @@ public class BedtimeStories {
             System.out.print("Which story would you like to read: ");
             String story = input.nextLine();
 
+            while ((story = bedtimeStories.readLine()) != null) {
+                System.out.println(story);
+            }
 
-
+            bedtimeStories.close();
+            input.close();
 
         } catch (Exception e) {
             System.out.println("Something went wrong");
