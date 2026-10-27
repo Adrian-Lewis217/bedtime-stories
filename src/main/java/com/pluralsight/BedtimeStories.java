@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class BedtimeStories {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        try {
-            BufferedReader bedtimeStories = new BufferedReader(new FileReader(String.valueOf(input)));
+        System.out.print("Which story would you like to read: ");
+        String story = input.nextLine();
 
-            System.out.print("Which story would you like to read: ");
-            String story = input.nextLine();
+        try {
+            BufferedReader bedtimeStories = new BufferedReader(new FileReader(story));
 
             while ((story = bedtimeStories.readLine()) != null) {
                 System.out.println(story);
@@ -23,9 +23,5 @@ public class BedtimeStories {
         } catch (Exception e) {
             System.out.println("Something went wrong");
         }
-
-        //prompt the user for the name/file of story to read
-
-
     }
 }
